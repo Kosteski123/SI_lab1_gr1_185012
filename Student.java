@@ -120,15 +120,54 @@ class Student {
 			return null;
 		}
 	};
-	//TODO constructor
+	public Student(String firstName,String lastName,String index, List<Integer> labPoints) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.index = index;
+		this.labPoints = labPoints;
+	}
 
-	//TODO seters & getters
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public List<Integer> getLabPoints() {
+		return labPoints;
+	}
+
+	public void setLabPoints(List<Integer> labPoints) {
+		this.labPoints = labPoints;
+	}
+
+	public String getIndex() {
+		return index;
+	}
+
+	public void setIndex(String index) {
+		this.index = index;
+	}
 
 	public double getAverage() {
-		//TODO
+		Integer sum = 0;
+		for (Integer i:labPoints) {
+			sum+=i;
+		}
+		return (double)sum/labPoints.size();
 	}
 
 	public boolean hasSignature() {
-		//TODO
+		return labPoints.size() > 8;
 	}
 }
